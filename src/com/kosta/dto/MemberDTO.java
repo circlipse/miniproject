@@ -48,25 +48,9 @@ public class MemberDTO {
 	public void setJoindate(String joindate) {
 		this.joindate = joindate;
 	}
-	public MemberDTO(int memberno, String id, String pwd, String name, String email, String joindate) {
-		super();
-		this.memberno = memberno;
-		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.email = email;
-		this.joindate = joindate;
-	}
 	public MemberDTO() {
 		super();
 	}
 	
 	
 }
-//(memberno number(5) constraint member_mno_pk primary key
-//		 ,id varchar2(100)
-//		  ,pwd varchar2(1000)
-//		  ,name varchar2(20)
-//		  ,email varchar2(1000)
-//		  ,joindate date default sysdate);
-//		  
