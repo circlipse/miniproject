@@ -25,9 +25,9 @@ public class MemberTest {
 		System.out.println("아이디를 입력하세요");
 		String id = sc.next();
 
-		boolean status = dao.checkid(id);
-
-		if (status == false) {
+		if (dao.checkid(id)) {
+			System.out.println("중복된id입니다.");
+		} else {
 			System.out.println("패스워드를 입력하시오");
 			String pwd = sc.next();
 			System.out.println("이름을 입력하시오");
@@ -42,13 +42,11 @@ public class MemberTest {
 			} else {
 				System.out.println("추가 실패!!!!!!!!");
 			}
-		} else {
-			System.out.println("중복된id입니다.");
 		}
 	}
 
 	public void searchall() {
-		List<MemberDTO> list = dao.getAll();
+		ArrayList<MemberDTO> list = dao.getAll();
 		Iterator<MemberDTO> ita = list.iterator();
 
 		while (ita.hasNext()) {
@@ -63,7 +61,7 @@ public class MemberTest {
 		String id = sc.next();
 		boolean status = dao.checkid(id);
 
-		if (status == true) {
+		if (dao.checkid(id)) {
 			System.out.println("패스워드를 입력하시오");
 			String pwd = sc.next();
 			System.out.println("이메일을 입력하시오");
@@ -87,7 +85,7 @@ public class MemberTest {
 
 		boolean status = dao.checkid(id);
 
-		if (status == true) {
+		if (dao.checkid(id)) {
 			int result = dao.delete(id);
 
 			if (result >= 1) {
